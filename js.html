@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+            table {
+                border-collapse: collapse;
+                outline: 1px solid black;
+            }
+
+            td {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font-size: 60px;
+            }
+
+            th {
+                background: lightgray;
+            }
+/*
+            tr:nth-child(even) td:nth-child(odd),
+            tr:nth-child(odd) td:nth-child(even) {
+                background: gray;
+            }
+*/
+            tr:first-child th, tr:last-child th {
+                height: 50px;
+            }
+
+            th:first-child, th:last-child {
+                width: 50px;
+            }
+            .td {
+                background: gray;
+            }
+        </style>
+        <title>Таблица</title>
+
+    </head>
+    <boby>
+        <table>
+            <tr>
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>&#9820;</td>
+                <td>&#9822;</td>
+                <td>&#9821;</td>
+                <td>&#9819;</td>
+                <td>&#9818;</td>
+                <td>&#9821;</td>
+                <td>&#9822;</td>
+                <td>&#9820;</td>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <th>7</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>6</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <th>2</th>
+            </tr>
+            <tr class="last">
+                <th>1</th>
+                <td>&#9814;</td>
+                <td>&#9816;</td>
+                <td>&#9815;</td>
+                <td>&#9813;</td>
+                <td>&#9812;</td>
+                <td>&#9815;</td>
+                <td>&#9816;</td>
+                <td>&#9814;</td>
+                <th>1</th>
+            </tr>
+            <tr class="last">
+                <th></th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+                <th>E</th>
+                <th>F</th>
+                <th>G</th>
+                <th>H</th>
+                <th></th>
+            </tr>
+        </table>
+
+        <input id="checkbox" type="checkbox">
+
+        <script>
+//            console.dir(document.body.children[0].children[0].children);
+//            console.log(document.getElementById('last'));
+//            console.dir(document.querySelector(".last"));
+
+/*
+            let alltd = document.getElementsByTagName('td');
+
+            for (let i of alltd) {
+                let idx = [].indexOf.call(alltd, i);
+                console.dir(idx);
+                let hor = idx % 8;
+                let ver = Math.floor(idx / 8);
+                
+                if (((ver % 2) && !(hor % 2))  || (!(ver % 2) && (hor % 2))) i.className = 'td';
+            }
+*/
+            let alltd = document.querySelectorAll('tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even)');
+
+            for (let i of alltd) {
+                i.className = 'td';
+            }
+
+            let q = document.querySelector('#checkbox');
+            q.setAttribute("disabled", true);
+            console.log(q.checked);
+            q.setAttribute("disabled", false);
+            console.log(q.checked);
+        </script>
+        </boby>
+</html>
